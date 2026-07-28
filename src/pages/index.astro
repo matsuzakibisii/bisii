@@ -1,0 +1,215 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const services = [
+  {
+    num: "01",
+    title: "炎上案件リプレイス／高難易度システム開発",
+    body: "位置情報システムや高負荷分散サービスなど、古くなったシステムの再設計・保守を、豊富な経験を持つエンジニアがAIを活用しながら支援します。",
+    href: "/report",
+  },
+  {
+    num: "02",
+    title: "データ分析・PDDDCAAA事業",
+    body: "KPI設計から日々のユーザー行動分析まで。表面的な指標だけでなく、成長のブレイクポイントを見極めて伴走します。",
+    href: "/analytics",
+  },
+  {
+    num: "03",
+    title: "新規事業開発・事業推進",
+    body: "調査〜企画〜予算策定〜事業開始まで、最短でトライ＆エラーできる体制を構築。０→１から10億円規模までを支援します。",
+    href: "/consulting",
+  },
+];
+---
+
+<Layout
+  title="株式会社ビシィッ　代表以外が超精鋭のwebサービス企画・開発集団"
+  description="株式会社ビシィッは表にでてこない「代表以外が超精鋭の事業企画とwebサービスの開発会社」です。FDE（Forward Deployed Engineering）とAI駆動の成長支援で、事業成長を加速させます。"
+  path="/"
+>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">きっとかゆいところに手が届く法人</p>
+      <h1 class="display">
+        エンジニアリングから、<br />
+        <span class="accent">事業が創れる</span>法人です。
+      </h1>
+      <p class="sub">
+        代表以外が超精鋭。メガベンチャー出身のエースたちが、AIを取り入れながらFDE（Forward
+        Deployed Engineering）として貴社の中に入り、０→１から10億円規模までの成長を支援します。
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="/contact">相談する</a>
+        <a class="btn ghost" href="/report">開発実績を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="divider"></div>
+  </div>
+
+  <section class="services wrap">
+    <h2 class="display">当社で行っている事業</h2>
+    <p class="lead">
+      位置情報・高難易度システムから、データ分析、新規事業開発まで。AI活用と経験豊富な人材の両輪で成長ドライバーを見つけます。
+    </p>
+    <div class="grid">
+      {
+        services.map((s) => (
+          <a class="card" href={s.href}>
+            <div class="num">{s.num}</div>
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="quote">
+    <div class="wrap">
+      <p class="display">「知ってます、アクセスした人の９割はindexしかみてないの。」</p>
+      <p class="who">— 株式会社ビシィッ</p>
+    </div>
+  </section>
+
+  <section class="track-record wrap">
+    <h2 class="display">実績</h2>
+    <ul>
+      <li>超高負荷の位置情報系サービス開発（国内販売数１位）</li>
+      <li>上場企業での新規事業開発〜運用 10件以上</li>
+      <li>マーケティング戦略〜実施でのユーザー登録実績 100万人以上</li>
+      <li>1事業での売上実績 最大5億以上</li>
+      <li>データ分析による売上改善実績 1億以上</li>
+    </ul>
+    <a class="btn ghost" href="/report">すべての開発実績を見る</a>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    padding: 88px 0 64px;
+  }
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    line-height: 1.5;
+    max-width: 760px;
+    margin: 26px 0 0;
+  }
+  .sub {
+    margin-top: 28px;
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 600px;
+  }
+  .cta-row {
+    margin-top: 42px;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .services {
+    padding: 0 0 96px;
+  }
+  .services h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .lead {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 48px;
+    max-width: 560px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 800px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .card {
+    padding: 32px 28px 32px 0;
+    border-left: 1px solid var(--line);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .card:first-child {
+    border-left: none;
+    padding-left: 0;
+  }
+  .card:not(:first-child) {
+    padding-left: 28px;
+  }
+  @media (max-width: 800px) {
+    .card,
+    .card:first-child,
+    .card:not(:first-child) {
+      border-left: none;
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+    }
+  }
+  .card .num {
+    font-family: "Shippori Mincho", serif;
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .card p {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .quote {
+    background: var(--paper);
+    padding: 64px 0;
+    text-align: center;
+  }
+  .quote p.display {
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: 700;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .quote .who {
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .track-record {
+    padding: 88px 0;
+  }
+  .track-record h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 28px;
+  }
+  .track-record ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+    max-width: 640px;
+  }
+  .track-record li {
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    color: var(--muted);
+  }
+</style>

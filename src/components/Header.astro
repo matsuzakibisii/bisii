@@ -1,0 +1,53 @@
+---
+const nav = [
+  { href: "/report", label: "開発実績" },
+  { href: "/consulting", label: "新規事業開発" },
+  { href: "/analytics", label: "データ分析" },
+  { href: "/server-construction", label: "サーバコスト圧縮" },
+  { href: "/page", label: "仮説検証支援" },
+  { href: "/blog", label: "ブログ" },
+  { href: "/contact", label: "お問合せ" },
+];
+---
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a href="/" class="logo display">株式会社ビシ<span class="accent">ィ</span>ッ</a>
+    <nav>
+      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--line);
+  }
+  .bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px 0;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .logo {
+    font-weight: 800;
+    font-size: 19px;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+  }
+  nav {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  nav a {
+    text-decoration: none;
+  }
+  nav a:hover {
+    color: var(--accent);
+  }
+</style>

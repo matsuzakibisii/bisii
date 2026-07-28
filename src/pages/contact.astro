@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// TODO: Formspreeでアカウント登録後、発行されたフォームIDに置き換えてください。
+// https://formspree.io/forms/ の「Integration」から endpoint を確認できます。
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+---
+
+<Layout
+  title="お問合せ"
+  description="ビシィッへのお問い合わせはこちらから。お仕事に関するご相談、事業に関するご相談はお気軽にどうぞ。"
+  path="/contact"
+>
+  <section class="page-hero wrap">
+    <p class="eyebrow">Contact</p>
+    <h1 class="display">お問合せ</h1>
+    <p class="lead">
+      お仕事に関するご相談、事業に関するご相談はこちらからお願いします。
+    </p>
+  </section>
+
+  <section class="page-body wrap">
+    <form action={FORMSPREE_ENDPOINT} method="POST" class="contact-form">
+      <label>
+        お名前
+        <input type="text" name="name" required />
+      </label>
+      <label>
+        会社名
+        <input type="text" name="company" />
+      </label>
+      <label>
+        メールアドレス
+        <input type="email" name="email" required />
+      </label>
+      <label>
+        お問い合わせ内容
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+      <button type="submit" class="btn">送信する</button>
+    </form>
+  </section>
+</Layout>
+
+<style>
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 520px;
+  }
+  .contact-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text);
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    background: #fff;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+  .contact-form button {
+    align-self: flex-start;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+</style>

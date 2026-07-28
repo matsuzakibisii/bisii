@@ -1,0 +1,32 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="company">株式会社ビシィッ</p>
+    <p class="meta">神奈川県逗子市新宿 / 東京都渋谷区渋谷２−２４−１２</p>
+    <p class="copy">© {year} Bisii.co,ltd</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: 44px 0;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+  }
+  .company {
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 6px;
+  }
+  .meta {
+    margin: 0 0 6px;
+  }
+  .copy {
+    margin: 0;
+  }
+</style>
